@@ -15,6 +15,9 @@ import ErrorPage from './pages/errorPage/ErrorPage';
 import AddToCart from './pages/AddToCart/AddToCart';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Brand from './pages/Brand/Brand';
+import AdDetails from './pages/Brand/AdDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,11 +26,12 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader:()=>fetch('http://localhost:5000/brand')
       },
       {
         path:'/addproduct',
-        element:<AddProduct></AddProduct>
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path:'/addtocart',
@@ -40,6 +44,15 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:"/brand/:name",
+        element:<Brand></Brand>,
+        loader:({params}) =>fetch(`http://localhost:5000/brand/${params.name}`)
+      },
+      {
+      path:'/adddetails',
+      element:<AdDetails></AdDetails>
       }
     ]
   },
