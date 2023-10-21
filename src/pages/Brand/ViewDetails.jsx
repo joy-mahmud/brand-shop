@@ -11,7 +11,7 @@ const ViewDetails = () => {
         const userId = user.uid
         console.log(user,model_id)
         const cartData = {userId,model_id,photo,model}
-        fetch('http://localhost:5000/usersCart',{
+        fetch('https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/usersCart',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -23,7 +23,7 @@ const ViewDetails = () => {
     }
     return (
         <div>
-            <div className="flex items-center justify-around">
+            <div className="md:flex items-center justify-around">
                 <div>
                     <img src={photo} alt="" className="md:h-[400px]" />
                 </div>

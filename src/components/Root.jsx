@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const Root = () => {
-    const[black,setTheme]=useState(true)
+    const[black,setTheme]=useState(false)
   const handleTheme=()=>{
         setTheme(!black)
     }

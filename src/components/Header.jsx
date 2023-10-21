@@ -1,11 +1,11 @@
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
-const {user,userLogOut,loading} = useContext(AuthContext)
+const {user,userLogOut} = useContext(AuthContext)
 //const[uid,setuid] =useState(null)
 let uid=null
 if(user){

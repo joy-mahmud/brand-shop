@@ -12,7 +12,7 @@ import Root from './components/Root.jsx';
 import Home from './pages/Home/Home.jsx';
 import AddProduct from './pages/AddProduct/AddProduct';
 import ErrorPage from './pages/errorPage/ErrorPage';
-import AddToCart from './pages/AddToCart/AddToCart';
+// import AddToCart from './pages/AddToCart/AddToCart';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -30,16 +30,13 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:5000/brand')
+        loader:()=>fetch('https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/brand')
       },
       {
         path:'/addproduct',
         element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
-      {
-        path:'/addtocart',
-        element:<AddToCart></AddToCart>
-      },
+      
       {
         path:'/login',
         element:<Login></Login>
@@ -51,7 +48,7 @@ const router = createBrowserRouter([
       {
         path:"/brand/:name",
         element:<Brand></Brand>,
-        loader:({params}) =>fetch(`http://localhost:5000/brand/${params.name}`)
+        loader:({params}) =>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/brand/${params.name}`)
       },
       {
       path:'/adddetails',
@@ -60,17 +57,17 @@ const router = createBrowserRouter([
       {
         path:'/details/:id',
         element:<ViewDetails></ViewDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+        loader:({params})=>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/details/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+        loader:({params})=>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/products/${params.id}`)
       },
       {
         path:'/mycart/:uid',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/usersCart/${params.uid}`)
+        loader:({params})=>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/usersCart/${params.uid}`)
       }
     ]
   },

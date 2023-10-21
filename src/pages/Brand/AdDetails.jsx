@@ -16,7 +16,7 @@ const AdDetails = () => {
 
         const details = {model,year,bodystyle,color,engine,horsepower,torque,model_id,photo}
 
-        fetch('http://localhost:5000/details',{
+        fetch('https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/details',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

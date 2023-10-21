@@ -9,7 +9,7 @@ const BrandDetailsCard = ({ brandDetails }) => {
 
     return (
       <div>
-          <div className="flex bg-[#DEE1E6] rounded-lg p-5 ">
+          <div className="md:flex bg-[#DEE1E6] rounded-lg p-5 ">
             <img className="h-[300px] w-[400px] mr-5" src={photo} alt="" />
             <div className="flex justify-between w-full">
                 <div className="flex flex-col justify-center w-3/4">

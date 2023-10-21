@@ -7,7 +7,7 @@ import Testimony from "./Testimony/Testimony";
 const Home = () => {
     const brands = useLoaderData()
 
-console.log(brands)
+
     return (
         <div>
            <img src={banner} className="lg:h-[400px]" alt="" />

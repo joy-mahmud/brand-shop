@@ -15,7 +15,7 @@ const CartItem = ({ cartData,cart,setCart }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/deleteProduct/${_id}`, {
+                fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/deleteProduct/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

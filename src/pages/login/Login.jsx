@@ -21,7 +21,7 @@ const Login = () => {
                     navigate(location?.state ? location.state : "/")
                 }, 2000);
             })
-            .catch(error => console.log(error))
+            .catch(() => toast("Email or password doesn't match"))
     }
 
     const GoogleSignInHandler = () => {
