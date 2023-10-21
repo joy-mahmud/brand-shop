@@ -5,7 +5,7 @@ const Meetus = () => {
         <div className=" ">
             <h2 className="text-4xl font-semibold text-center my-10">Meet Us</h2>
             <div className="bg-[#DEE1E6]">
-                <div className="grid md:grid-cols-3 py-10 container mx-auto">
+                <div className="grid md:grid-cols-3 py-10 container mx-auto gap-4">
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src="https://i.ibb.co/syHCkjg/ameer-basheer-ABuz-WPku1-Ug-unsplash.jpg" className="rounded-full h-[200px] w-[200px] mt-3" alt="CEO" /></figure>
                         <div className="card-body">

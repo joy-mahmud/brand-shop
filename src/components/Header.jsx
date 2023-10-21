@@ -19,7 +19,7 @@ const signOutHandler = () => {
         })
         .catch(error => console.error(error))
 }
-    const navLinks = <div className="flex font-semibold">
+    const navLinks = <div className="lg:flex font-semibold">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/addproduct">Add product</Link></li>
         <li><Link to={`/mycart/${uid}`}>My Cart</Link></li>
