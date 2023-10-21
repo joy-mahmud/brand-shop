@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import banner from "../../../public/banner.jpg"
 import BrandCard from "./BrandCard";
+import Meetus from "./MeetUs/Meetus";
 
 const Home = () => {
     const brands = useLoaderData()
@@ -15,6 +16,7 @@ console.log(brands)
                 brands.map(brand=><BrandCard key={brand._id} brandData={brand}></BrandCard>)
             }
            </div>
+           <Meetus></Meetus>
         </div>
     );
 };
