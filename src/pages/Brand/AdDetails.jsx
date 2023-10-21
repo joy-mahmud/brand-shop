@@ -12,8 +12,9 @@ const AdDetails = () => {
         const horsepower = form.horsepower.value
         const torque = form.torque.value
         const model_id=form.modelId.value 
+        const photo=form.photo.value 
 
-        const details = {model,year,bodystyle,color,engine,horsepower,torque}
+        const details = {model,year,bodystyle,color,engine,horsepower,torque,model_id,photo}
 
         fetch('http://localhost:5000/details',{
             method:'POST',
@@ -22,6 +23,7 @@ const AdDetails = () => {
             },
             body:JSON.stringify(details)
         })
+        form.reset()
     }
     return (
         <div>
@@ -34,6 +36,7 @@ const AdDetails = () => {
                 <input type="text" name="horsepower" placeholder="horsepower" className=" mr-5 input input-bordered input-primary w-full max-w-xs" /><br />
                 <input type="text" name="torque" placeholder="torque" className=" mr-5 input input-bordered input-primary w-full max-w-xs" /><br />
                 <input type="text" name="modelId" placeholder="model id" className=" mr-5 input input-bordered input-primary w-full max-w-xs" /><br />
+                <input type="text" name="photo" placeholder="photo" className=" mr-5 input input-bordered input-primary w-full max-w-xs" /><br />
                 <button type='submit' className="btn mt-3">Add</button>
             </form>
         </div>

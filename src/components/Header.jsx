@@ -1,11 +1,17 @@
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
-const {user,userLogOut} = useContext(AuthContext)
+const {user,userLogOut,loading} = useContext(AuthContext)
+//const[uid,setuid] =useState(null)
+let uid=null
+if(user){
+   uid=user.uid
+ }
+
 const signOutHandler = () => {
     userLogOut()
         .then(() => {
@@ -16,7 +22,7 @@ const signOutHandler = () => {
     const navLinks = <div className="flex font-semibold">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/addproduct">Add product</Link></li>
-        <li><Link to="/mycart">My Cart</Link></li>
+        <li><Link to={`/mycart/${uid}`}>My Cart</Link></li>
     </div>
     return (
         <div className="navbar container mx-auto rounded-lg">

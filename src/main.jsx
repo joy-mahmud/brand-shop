@@ -18,6 +18,9 @@ import Register from './pages/register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Brand from './pages/Brand/Brand';
 import AdDetails from './pages/Brand/AdDetails';
+import Update from './pages/Brand/Update';
+import ViewDetails from './pages/Brand/ViewDetails';
+import MyCart from './pages/MyCart/MyCart';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,6 +56,21 @@ const router = createBrowserRouter([
       {
       path:'/adddetails',
       element:<AdDetails></AdDetails>
+      },
+      {
+        path:'/details/:id',
+        element:<ViewDetails></ViewDetails>,
+        loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+      },
+      {
+        path:'/update/:id',
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+      },
+      {
+        path:'/mycart/:uid',
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/usersCart/${params.uid}`)
       }
     ]
   },

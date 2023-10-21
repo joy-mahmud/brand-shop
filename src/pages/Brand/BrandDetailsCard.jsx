@@ -1,9 +1,10 @@
 
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const BrandDetailsCard = ({ brandDetails }) => {
-    const { name, brand, price, type, rating, photo,shortDesc } = brandDetails
+    const { name, brand, price, type, rating, photo,shortDesc,_id } = brandDetails
 
 
     return (
@@ -28,12 +29,12 @@ const BrandDetailsCard = ({ brandDetails }) => {
                    }
                   </div>
                    
-                <button className="btn btn-primary w-1/2 mb-5">Update</button>
+                <Link to={`/update/${_id}`}><button className="btn btn-primary w-1/2 mb-5">Update</button></Link>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-3">
                     <p className="text-3xl font-semibold">Price</p>
                     <h2 className="text-2xl font-medium">${price}</h2>
-                    <button className="btn btn-primary">view details</button>
+                    <Link to={`/details/${_id}`}><button className="btn btn-primary">view details</button></Link>
                 </div>
 
             </div>
