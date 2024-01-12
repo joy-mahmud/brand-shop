@@ -21,6 +21,7 @@ import AdDetails from './pages/Brand/AdDetails';
 import Update from './pages/Brand/Update';
 import ViewDetails from './pages/Brand/ViewDetails';
 import MyCart from './pages/MyCart/MyCart';
+import UpdateProfile from './pages/updateProfile/UpdateProfile.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/brand')
+        loader:()=>fetch('https://y-seven-rho-25.vercel.app/brand')
       },
       {
         path:'/addproduct',
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
       {
         path:"/brand/:name",
         element:<Brand></Brand>,
-        loader:({params}) =>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/brand/${params.name}`)
+        loader:({params}) =>fetch(`https://y-seven-rho-25.vercel.app/brand/${params.name}`)
       },
       {
       path:'/adddetails',
@@ -57,17 +58,21 @@ const router = createBrowserRouter([
       {
         path:'/details/:id',
         element:<ViewDetails></ViewDetails>,
-        loader:({params})=>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/details/${params.id}`)
+        loader:({params})=>fetch(`https://y-seven-rho-25.vercel.app/details/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/products/${params.id}`)
+        loader:({params})=>fetch(`https://y-seven-rho-25.vercel.app/products/${params.id}`)
       },
       {
         path:'/mycart/:uid',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:({params})=>fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/usersCart/${params.uid}`)
+        loader:({params})=>fetch(`https://y-seven-rho-25.vercel.app/usersCart/${params.uid}`)
+      },
+      {
+        path:'updateProfile',
+        element:<UpdateProfile></UpdateProfile>
       }
     ]
   },

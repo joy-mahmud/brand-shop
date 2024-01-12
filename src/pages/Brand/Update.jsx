@@ -22,7 +22,7 @@ const Update = () => {
         const product = { name, brand, type, price, photo, rating }
         console.log(brand)
         form.reset()
-        fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/products/${id.id}`, {
+        fetch(`https://y-seven-rho-25.vercel.app/products/${id.id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

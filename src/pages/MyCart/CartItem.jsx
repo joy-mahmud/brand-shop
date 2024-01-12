@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 
-const CartItem = ({ cartData,cart,setCart }) => {
+const CartItem = ({ cartData, cart, setCart }) => {
     const { photo, model, _id } = cartData
-    
+
     const handleDelete = (_id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -15,7 +15,7 @@ const CartItem = ({ cartData,cart,setCart }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://y-8ohjklzks-joy-mahmuds-projects-22f2ffa2.vercel.app/deleteProduct/${_id}`, {
+                fetch(`https://y-seven-rho-25.vercel.app/deleteProduct/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -37,13 +37,14 @@ const CartItem = ({ cartData,cart,setCart }) => {
         })
     }
     return (
-        <div className="flex justify-between">
+        <div className="">
             <div className="flex items-center p-3 border-2 my-2 rounded-lg">
                 <img src={photo} className="h-[80px]" alt="" />
                 <div className="flex items-center gap-5">
                     <h2 className="text-3xl font-semibold">{model}</h2>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-secondary">X</button></div>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-secondary"></button></div>
             </div>
+            
 
         </div>
     );
