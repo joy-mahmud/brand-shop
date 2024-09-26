@@ -10,7 +10,7 @@ const Home = () => {
    
         return (
             <div>
-               <img src={banner} className="lg:h-[400px] w-full" alt="" />
+               <img src={banner} className="lg:h-[400px] w-full" alt="img" />
                <h2 className="text-center text-4xl font-semibold mt-12">Our trusted Brands</h2>
                <div className="grid md:grid-cols-3 gap-5 container mx-auto mt-10">
                 {
