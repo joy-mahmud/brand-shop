@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('https://y-seven-rho-25.vercel.app/brand')
+        loader:()=>fetch('http://localhost:5000/brand')
       },
       {
         path:'/addproduct',
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
         path:"/brand/:name",
         element:<Brand></Brand>,
-        loader:({params}) =>fetch(`https://y-seven-rho-25.vercel.app/brand/${params.name}`)
+        loader:({params}) =>fetch(`http://localhost:5000/brand/${params.name}`)
       },
       {
       path:'/adddetails',
@@ -58,17 +58,17 @@ const router = createBrowserRouter([
       {
         path:'/details/:id',
         element:<ViewDetails></ViewDetails>,
-        loader:({params})=>fetch(`https://y-seven-rho-25.vercel.app/details/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`https://y-seven-rho-25.vercel.app/products/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
       },
       {
         path:'/mycart/:uid',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:({params})=>fetch(`https://y-seven-rho-25.vercel.app/usersCart/${params.uid}`)
+        loader:({params})=>fetch(`http://localhost:5000/usersCart/${params.uid}`)
       },
       {
         path:'updateProfile',

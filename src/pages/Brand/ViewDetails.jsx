@@ -12,7 +12,7 @@ const ViewDetails = () => {
         const userId = user.uid
         console.log(user,model_id)
         const cartData = {userId,model_id,photo,model,price,horsepower}
-        fetch('https://y-seven-rho-25.vercel.app/usersCart',{
+        fetch('http://localhost:5000/usersCart',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

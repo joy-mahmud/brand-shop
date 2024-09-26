@@ -16,7 +16,7 @@ const AdDetails = () => {
 
         const details = {model,year,bodystyle,color,engine,horsepower,torque,model_id,photo}
 
-        fetch('https://y-seven-rho-25.vercel.app/details',{
+        fetch('http://localhost:5000/details',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

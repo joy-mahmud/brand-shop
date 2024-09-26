@@ -16,7 +16,7 @@ const AddProduct = () => {
         const product = { name, photo, brand, type, price, shortDesc, rating }
         console.log(brand)
         form.reset()
-        fetch('https://y-seven-rho-25.vercel.app/products', {
+        fetch('http://localhost:5000/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
